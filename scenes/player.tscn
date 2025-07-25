@@ -1,10 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://caelnc0mta6gy"]
+[gd_scene load_steps=5 format=3 uid="uid://caelnc0mta6gy"]
 
 [ext_resource type="Texture2D" uid="uid://c73wf6ics1dug" path="res://scenes/sketch_mcweekq32x32.png" id="1_0vm3a"]
 [ext_resource type="Script" path="res://scenes/playermovement.gd" id="1_7x6u8"]
+[ext_resource type="PackedScene" uid="uid://c7nhlbudn3561" path="res://scenes/interacting_component.tscn" id="3_o847t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sf1ll"]
+radius = 191.377
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_7x6u8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
 texture = ExtResource("1_0vm3a")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(-23, 57)
+shape = SubResource("CircleShape2D_sf1ll")
+
+[node name="interactingComponent" parent="." instance=ExtResource("3_o847t")]
+z_index = 10
+position = Vector2(-5, 1)
