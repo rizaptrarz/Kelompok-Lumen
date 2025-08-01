@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk1cc4dirpt1g"]
+
+[ext_resource type="Texture2D" uid="uid://cnl2nljcqixrw" path="res://assets/Task Mechanic/bedroom  furniture.png" id="1_1qwox"]
+[ext_resource type="Script" path="res://scripts/kasur.gd" id="1_8gqft"]
+[ext_resource type="PackedScene" path="res://scenes/interactable.tscn" id="2_7jmxu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5txy"]
+atlas = ExtResource("1_1qwox")
+region = Rect2(115.899, 78.948, 44.3186, 48.6636)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv7r5"]
+size = Vector2(109, 121)
+
+[node name="kasur" type="Node2D"]
+script = ExtResource("1_8gqft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.5625, 2.5625)
+texture = SubResource("AtlasTexture_e5txy")
+
+[node name="interactable" parent="." instance=ExtResource("2_7jmxu")]
+interact_name = "[E] Rapikan Kasur"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_rv7r5")

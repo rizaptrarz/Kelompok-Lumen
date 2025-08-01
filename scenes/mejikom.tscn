@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0rjfpo0usm3w"]
+
+[ext_resource type="Script" path="res://scripts/mejikom.gd" id="1_7h3h3"]
+[ext_resource type="Texture2D" uid="uid://damf3lgt2yp14" path="res://assets/Task Mechanic/tm_mejikom.png" id="1_tnk85"]
+[ext_resource type="PackedScene" path="res://scenes/interactable.tscn" id="2_jeanp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7y1g"]
+size = Vector2(44, 45)
+
+[node name="mejikom" type="Node2D"]
+script = ExtResource("1_7h3h3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0738719, 0.0643191)
+texture = ExtResource("1_tnk85")
+offset = Vector2(1, 1)
+flip_h = true
+
+[node name="interactable" parent="." instance=ExtResource("2_jeanp")]
+interact_name = "[E] Masak Nasi"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_y7y1g")

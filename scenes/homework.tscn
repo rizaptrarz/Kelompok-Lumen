@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnrspft5gv2jr"]
+
+[ext_resource type="Script" path="res://scripts/homework.gd" id="1_858qt"]
+[ext_resource type="Texture2D" uid="uid://dg8wd1h1ld022" path="res://assets/Interiors_free_48x48.png" id="1_ot8rn"]
+[ext_resource type="PackedScene" path="res://scenes/interactable.tscn" id="2_xaxnt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_viard"]
+atlas = ExtResource("1_ot8rn")
+region = Rect2(245.609, 1747.99, 85.5906, 75.952)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svyxj"]
+size = Vector2(106, 90)
+
+[node name="homework" type="Node2D"]
+script = ExtResource("1_858qt")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 1)
+scale = Vector2(1.26471, 1.23333)
+texture = SubResource("AtlasTexture_viard")
+
+[node name="interactable" parent="." instance=ExtResource("2_xaxnt")]
+interact_name = "[E] Kerjakan PR"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_svyxj")

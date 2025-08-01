@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqjmbqs4uogat"]
+[gd_scene load_steps=10 format=3 uid="uid://bqjmbqs4uogat"]
 
 [ext_resource type="PackedScene" uid="uid://caelnc0mta6gy" path="res://scenes/player.tscn" id="1_dffci"]
 [ext_resource type="Script" path="res://scripts/time/time_system.gd" id="2_t6f58"]
 [ext_resource type="Script" path="res://scripts/time/date_time.gd" id="3_nqidl"]
 [ext_resource type="PackedScene" uid="uid://8ajw3s7xjqok" path="res://scenes/jemuran.tscn" id="4_co1dh"]
+[ext_resource type="PackedScene" uid="uid://bnrspft5gv2jr" path="res://scenes/homework.tscn" id="5_edv34"]
+[ext_resource type="PackedScene" uid="uid://d0rjfpo0usm3w" path="res://scenes/mejikom.tscn" id="6_5lljq"]
+[ext_resource type="PackedScene" uid="uid://bk1cc4dirpt1g" path="res://scenes/kasur.tscn" id="7_fhpr0"]
+[ext_resource type="PackedScene" uid="uid://b4q6tx67wklsd" path="res://scenes/poop.tscn" id="8_tph8m"]
 
 [sub_resource type="Resource" id="Resource_lb2an"]
 script = ExtResource("3_nqidl")
@@ -22,7 +26,27 @@ scale = Vector2(0.119999, 0.119999)
 script = ExtResource("2_t6f58")
 date_time = SubResource("Resource_lb2an")
 
-[node name="items" type="Node" parent="."]
+[node name="task" type="Node" parent="."]
 
-[node name="jemuran" parent="items" instance=ExtResource("4_co1dh")]
+[node name="jemuran" parent="task" instance=ExtResource("4_co1dh")]
 position = Vector2(827, 311)
+
+[node name="homework" parent="task" instance=ExtResource("5_edv34")]
+position = Vector2(119, 96)
+
+[node name="mejikom" parent="task" instance=ExtResource("6_5lljq")]
+position = Vector2(294, 93)
+
+[node name="kasur" parent="task" instance=ExtResource("7_fhpr0")]
+position = Vector2(487, 94)
+
+[node name="poops" type="Node" parent="task"]
+
+[node name="poop" parent="task/poops" instance=ExtResource("8_tph8m")]
+position = Vector2(675, 104)
+
+[node name="poop2" parent="task/poops" instance=ExtResource("8_tph8m")]
+position = Vector2(723, 106)
+
+[node name="poop3" parent="task/poops" instance=ExtResource("8_tph8m")]
+position = Vector2(769, 88)

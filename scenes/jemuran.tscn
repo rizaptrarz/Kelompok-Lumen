@@ -24,7 +24,7 @@ texture = ExtResource("2_7nu74")
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("2_tnlgn")
-interact_name = "Interact"
+interact_name = "[E] Jemur/Angkat Pakaian"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
 position = Vector2(2, 20)

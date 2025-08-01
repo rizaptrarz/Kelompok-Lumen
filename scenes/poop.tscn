@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4q6tx67wklsd"]
+
+[ext_resource type="Texture2D" uid="uid://c5h7khc2xgh3d" path="res://assets/Task Mechanic/poops-sheet.png" id="1_0vkkv"]
+[ext_resource type="Script" path="res://scripts/poop.gd" id="1_doao0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kge5w"]
+atlas = ExtResource("1_0vkkv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lahxp"]
+radius = 9.21954
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f800b"]
+radius = 87.0057
+
+[node name="poop" type="Area2D"]
+script = ExtResource("1_doao0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_kge5w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lahxp")
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+shape = SubResource("CircleShape2D_f800b")
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]
