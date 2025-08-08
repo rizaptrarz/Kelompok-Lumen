@@ -1,8 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqjmbqs4uogat"]
+[gd_scene load_steps=10 format=3 uid="uid://bqjmbqs4uogat"]
 
 [ext_resource type="PackedScene" uid="uid://caelnc0mta6gy" path="res://scenes/player.tscn" id="1_dffci"]
-<<<<<<< Updated upstream
-=======
 [ext_resource type="Script" uid="uid://bhqa1m4dg8p0g" path="res://scripts/time/time_system.gd" id="2_t6f58"]
 [ext_resource type="Script" uid="uid://c5gdeipl51js" path="res://scripts/time/date_time.gd" id="3_nqidl"]
 [ext_resource type="PackedScene" path="res://scenes/jemuran.tscn" id="4_co1dh"]
@@ -17,10 +15,38 @@ seconds = 0
 minutes = 0
 hours = 0
 days = 0
->>>>>>> Stashed changes
 
 [node name="game_scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_dffci")]
 position = Vector2(445, 308)
 scale = Vector2(0.119999, 0.119999)
+
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("2_t6f58")
+date_time = SubResource("Resource_lb2an")
+
+[node name="task" type="Node" parent="."]
+
+[node name="jemuran" parent="task" instance=ExtResource("4_co1dh")]
+position = Vector2(827, 311)
+
+[node name="homework" parent="task" instance=ExtResource("5_edv34")]
+position = Vector2(119, 96)
+
+[node name="mejikom" parent="task" instance=ExtResource("6_5lljq")]
+position = Vector2(294, 93)
+
+[node name="kasur" parent="task" instance=ExtResource("7_fhpr0")]
+position = Vector2(487, 94)
+
+[node name="poops" type="Node" parent="task"]
+
+[node name="poop" parent="task/poops" instance=ExtResource("8_tph8m")]
+position = Vector2(675, 104)
+
+[node name="poop2" parent="task/poops" instance=ExtResource("8_tph8m")]
+position = Vector2(723, 106)
+
+[node name="poop3" parent="task/poops" instance=ExtResource("8_tph8m")]
+position = Vector2(769, 88)
