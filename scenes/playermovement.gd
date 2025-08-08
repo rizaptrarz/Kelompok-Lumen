@@ -42,4 +42,3 @@ func _physics_process(delta):
 		$Sprite2D.flip_h = true
 
 	move_and_slide()
-	print("Stamina: ", round(current_stamina))

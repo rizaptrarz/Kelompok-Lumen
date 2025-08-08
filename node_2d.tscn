@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqjmbqs4uogat"]
+[gd_scene load_steps=11 format=3 uid="uid://bqjmbqs4uogat"]
 
 [ext_resource type="PackedScene" uid="uid://caelnc0mta6gy" path="res://scenes/player.tscn" id="1_dffci"]
 [ext_resource type="Script" path="res://scripts/time/time_system.gd" id="2_t6f58"]
 [ext_resource type="Script" path="res://scripts/time/date_time.gd" id="3_nqidl"]
 [ext_resource type="PackedScene" uid="uid://8ajw3s7xjqok" path="res://scenes/jemuran.tscn" id="4_co1dh"]
+[ext_resource type="Script" path="res://scripts/task_manager.gd" id="4_xjl2l"]
 [ext_resource type="PackedScene" uid="uid://bnrspft5gv2jr" path="res://scenes/homework.tscn" id="5_edv34"]
 [ext_resource type="PackedScene" uid="uid://d0rjfpo0usm3w" path="res://scenes/mejikom.tscn" id="6_5lljq"]
 [ext_resource type="PackedScene" uid="uid://bk1cc4dirpt1g" path="res://scenes/kasur.tscn" id="7_fhpr0"]
@@ -25,6 +26,9 @@ scale = Vector2(0.119999, 0.119999)
 [node name="TimeSystem" type="Node" parent="."]
 script = ExtResource("2_t6f58")
 date_time = SubResource("Resource_lb2an")
+
+[node name="TaskManager" type="Node" parent="."]
+script = ExtResource("4_xjl2l")
 
 [node name="task" type="Node" parent="."]
 

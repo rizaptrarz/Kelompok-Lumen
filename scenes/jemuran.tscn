@@ -30,4 +30,9 @@ interact_name = "[E] Jemur/Angkat Pakaian"
 position = Vector2(2, 20)
 shape = SubResource("CircleShape2D_ywmkm")
 
+[node name="JemuranTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="area_entered" from="interactable" to="." method="_on_interactable_area_entered"]
+[connection signal="timeout" from="JemuranTimer" to="." method="_on_jemuran_timer_timeout"]
