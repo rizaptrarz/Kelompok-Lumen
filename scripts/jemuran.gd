@@ -69,7 +69,7 @@ func _process(delta: float) -> void:
 			
 	if not is_taking_damage and cooldownTimer > 0:
 		cooldownTimer -= delta
-		print("On cooldown: ", cooldownTimer)
+		
 	
 func _on_health_depleted():
 	is_dead = true

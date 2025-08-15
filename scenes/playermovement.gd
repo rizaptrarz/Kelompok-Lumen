@@ -10,8 +10,20 @@ extends CharacterBody2D
 var character_direction : Vector2 = Vector2.ZERO
 var current_stamina: float = stamina_max
 var is_running: bool = false
+var can_move: bool = true
+
+signal stopPlayer
+
+func _ready() -> void:
+	# Connect the stopPlayer signal to our own stop function
+	connect("stopPlayer", Callable(self, "_on_stop_player"))
 
 func _physics_process(delta):
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	character_direction.x = Input.get_axis("move_left", "move_right")
 	character_direction.y = Input.get_axis("move_up", "move_down")
 	
@@ -42,3 +54,7 @@ func _physics_process(delta):
 		$Sprite2D.flip_h = true
 
 	move_and_slide()
+
+func _on_stop_player():
+	can_move = false
+	velocity = Vector2.ZERO
