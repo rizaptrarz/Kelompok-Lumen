@@ -11,14 +11,14 @@ var can_interact: bool = true
 func _ready() -> void:
 	sprite.show()
 	interactable.interact = _on_interact
-	# Register this task in the TaskManager
+	
 	TaskManager.add_task("Bed")
 
 func _on_interact():
 	if not can_interact:
 		return
 
-	# Tell the player to stop moving
+	
 	player.emit_signal("stopPlayer")
 
 	progress = clamp(progress + 10, 0, 100)

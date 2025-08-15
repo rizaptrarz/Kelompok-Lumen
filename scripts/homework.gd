@@ -11,7 +11,7 @@ var can_interact: bool = true
 func _ready() -> void:
 	sprite.show()
 	interactable.interact = _on_interact
-	# Register this task in the TaskManager
+	
 	TaskManager.add_task("Homework")
 
 func _on_interact():
@@ -25,8 +25,8 @@ func _on_interact():
 	print("Homework Progress: %d%%" % progress)
 
 	if progress >= 100:
-		print("PR Berhasil Dikerjakan")  # Homework done!
-		TaskManager.check_task_complete("Homework") # Mark as complete
+		print("PR Berhasil Dikerjakan")  
+		TaskManager.check_task_complete("Homework") 
 		player.can_move = true
 	else:
 		can_interact = false
