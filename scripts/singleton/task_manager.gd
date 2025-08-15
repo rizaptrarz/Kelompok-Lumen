@@ -38,3 +38,8 @@ func check_win_condition() -> void:
 func menang() -> void:
 	print("Semua task selesai! WIN!")
 	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")  # Ganti dengan scene kamu
+
+# Kalah (Switch scene)
+func game_over() -> void:
+	print("Game Over!")
+	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")

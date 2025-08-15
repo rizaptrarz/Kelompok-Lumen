@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0rjfpo0usm3w"]
+[gd_scene load_steps=5 format=3 uid="uid://bc44uywknp5s3"]
 
 [ext_resource type="Script" path="res://scripts/mejikom.gd" id="1_7h3h3"]
 [ext_resource type="Texture2D" uid="uid://damf3lgt2yp14" path="res://assets/Task Mechanic/tm_mejikom.png" id="1_tnk85"]
-[ext_resource type="PackedScene" path="res://scenes/interactable.tscn" id="2_jeanp"]
+[ext_resource type="PackedScene" uid="uid://dvq28m8eifrfq" path="res://scenes/interactable.tscn" id="2_jeanp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7y1g"]
 size = Vector2(44, 45)

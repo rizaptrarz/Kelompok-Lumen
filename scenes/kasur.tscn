@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk1cc4dirpt1g"]
+[gd_scene load_steps=6 format=3 uid="uid://ds5ho3l5g0yc"]
 
 [ext_resource type="Texture2D" uid="uid://cnl2nljcqixrw" path="res://assets/Task Mechanic/bedroom  furniture.png" id="1_1qwox"]
 [ext_resource type="Script" path="res://scripts/kasur.gd" id="1_8gqft"]

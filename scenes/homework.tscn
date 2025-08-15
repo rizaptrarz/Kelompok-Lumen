@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnrspft5gv2jr"]
+[gd_scene load_steps=6 format=3 uid="uid://bsx8vm8mci3q8"]
 
 [ext_resource type="Script" path="res://scripts/homework.gd" id="1_858qt"]
 [ext_resource type="Texture2D" uid="uid://dg8wd1h1ld022" path="res://assets/Interiors_free_48x48.png" id="1_ot8rn"]
-[ext_resource type="PackedScene" path="res://scenes/interactable.tscn" id="2_xaxnt"]
+[ext_resource type="PackedScene" uid="uid://dvq28m8eifrfq" path="res://scenes/interactable.tscn" id="2_xaxnt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_viard"]
 atlas = ExtResource("1_ot8rn")

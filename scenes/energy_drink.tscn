@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv7dmm7vq74lf"]
+
+[ext_resource type="Texture2D" uid="uid://b5hfo01lbob1i" path="res://assets/Items/Item_energydrink.png" id="1_x34h5"]
+[ext_resource type="PackedScene" uid="uid://dvq28m8eifrfq" path="res://scenes/interactable.tscn" id="2_e7hvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2k3wn"]
+size = Vector2(142, 289)
+
+[node name="EnergyDrink" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(30, -9)
+scale = Vector2(0.271484, 0.277344)
+texture = ExtResource("1_x34h5")
+
+[node name="interactable" parent="." instance=ExtResource("2_e7hvt")]
+interact_name = "[E] Minum EnergyDrink"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+position = Vector2(32, -9.5)
+shape = SubResource("RectangleShape2D_2k3wn")

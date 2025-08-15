@@ -2,20 +2,27 @@ extends CharacterBody2D
 
 @export var movement_speed : float = 100
 @export var run_speed_multiplier: float = 3
-@export var stamina_max: float = 100.0
+
+@export var default_stamina_max: float = 100.0
+var stamina_max: float
+
 @export var stamina_regen_rate: float = 10.0
 @export var stamina_drain_rate: float = 10.0
 @export var min_stamina_to_run: float = 30.0
 
 var character_direction : Vector2 = Vector2.ZERO
-var current_stamina: float = stamina_max
+var current_stamina: float
 var is_running: bool = false
 var can_move: bool = true
+
+const STAMINA_CAP : float = 150.0
 
 signal stopPlayer
 
 func _ready() -> void:
-	# Connect the stopPlayer signal to our own stop function
+	stamina_max = default_stamina_max
+	current_stamina = stamina_max
+	
 	connect("stopPlayer", Callable(self, "_on_stop_player"))
 
 func _physics_process(delta):
@@ -54,7 +61,22 @@ func _physics_process(delta):
 		$Sprite2D.flip_h = true
 
 	move_and_slide()
+	print("Stamina: ", current_stamina)
 
 func _on_stop_player():
 	can_move = false
 	velocity = Vector2.ZERO
+	
+func apply_stamina_boost():
+	var old_stamina_max = stamina_max
+	
+	var stamina_percentage: float = 0
+	if old_stamina_max > 0:
+		stamina_percentage = current_stamina / old_stamina_max
+	
+	var new_stamina_max = default_stamina_max * 1.5
+	stamina_max = min(new_stamina_max, STAMINA_CAP)
+	
+	current_stamina = stamina_percentage * stamina_max
+	
+	print("Stamina Maksimum baru: ", stamina_max)
