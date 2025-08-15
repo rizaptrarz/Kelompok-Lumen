@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cnl2nljcqixrw" path="res://assets/Task Mechanic/bedroom  furniture.png" id="1_1qwox"]
 [ext_resource type="Script" path="res://scripts/kasur.gd" id="1_8gqft"]
-[ext_resource type="PackedScene" path="res://scenes/interactable.tscn" id="2_7jmxu"]
+[ext_resource type="PackedScene" uid="uid://dvq28m8eifrfq" path="res://scenes/interactable.tscn" id="2_7jmxu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e5txy"]
 atlas = ExtResource("1_1qwox")
