@@ -73,15 +73,10 @@ func _physics_process(delta):
 		animSprite.play("run_" + last_direction)
 	else:
 		velocity = Vector2.ZERO
-		animSprite.play("iddle_" + last_direction)
+		animSprite.play("idle_" + last_direction)
 	
 	move_and_slide()
-<<<<<<< Updated upstream
-	print("Stamina: ", current_stamina)
-=======
 	
->>>>>>> Stashed changes
-
 func _on_stop_player():
 	can_move = false
 	velocity = Vector2.ZERO
