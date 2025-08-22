@@ -60,6 +60,7 @@ func _process(delta: float) -> void:
 		var damage := damage_per_second * delta
 		current_health -= damage
 		print("Health: " , current_health)
+		# print("Health: " , current_health)
 
 		if current_health <= 0:
 			current_health = 0
