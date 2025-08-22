@@ -56,7 +56,6 @@ func _physics_process(delta):
 	
 	current_stamina = clamp(current_stamina, 0, stamina_max)
 	
-	if character_direction:
 
 	if character_direction != Vector2.ZERO:
 		velocity = character_direction * current_speed
@@ -73,15 +72,9 @@ func _physics_process(delta):
 				last_direction = "up"
 		animSprite.play("run_" + last_direction)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, current_speed)
 		velocity = Vector2.ZERO
 		animSprite.play("iddle_" + last_direction)
 	
-	if character_direction.x > 0:
-		$Sprite2D.flip_h = false
-	elif character_direction.x < 0:
-		$Sprite2D.flip_h = true
-
 	move_and_slide()
 <<<<<<< Updated upstream
 	print("Stamina: ", current_stamina)
