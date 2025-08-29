@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://t0c00rjoyhj6"]
+
+[ext_resource type="Script" uid="uid://c630462110l3m" path="res://scenes/game_over.gd" id="1_xeevv"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xeevv")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
