@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var timer: float = 0.0
 @export var winTime: float = 30
