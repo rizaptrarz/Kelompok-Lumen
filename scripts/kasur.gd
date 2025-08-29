@@ -21,7 +21,7 @@ func _on_interact():
 	
 	player.emit_signal("stopPlayer")
 
-	progress = clamp(progress + 10, 0, 100)
+	progress = clamp(progress + 100, 0, 100)
 	print("Progress: %d%%" % progress)
 
 	if progress >= 100:

@@ -1,25 +1,24 @@
-extends Node2D
+extends Node
 
-var timer: float = 0
-var winTime: float = 10
-var gameWon : bool = false
-@export var debugMode: bool
+var timer: float = 0.0
+@export var winTime: float = 30
+var gameWon: bool = false
+@export var debugMode: bool = false
 
 func _process(delta: float) -> void:
-	timer += delta;
+	if gameWon:
+		return
+	timer += delta
 	
 	if debugMode:
-		print(timer)
+		print("Timer:", timer)
 	
-	if !gameWon:
+	if timer >= winTime:
 		CheckWin()
-	
-	
-pass
 
 func CheckWin() -> void:
-	if timer >= winTime:
-		print("you win")
-		gameWon = true
-	
-pass
+	if gameWon:
+		return
+	gameWon = true
+	print("Timer selesai, cek win condition via TaskManager")
+	TaskManager.timer_win_reached()

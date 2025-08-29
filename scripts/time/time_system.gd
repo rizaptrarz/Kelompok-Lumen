@@ -1,8 +1,25 @@
-class_name TimeSystem extends Node
+extends Node2D
 
-@export var date_time : DateTime
-@export var ticks_per_second : int = 6
-
+var timer: float = 0.0
+@export var winTime: float = 30
+var gameWon: bool = false
+@export var debugMode: bool = false
 
 func _process(delta: float) -> void:
-	date_time.increase_by_sec(delta * ticks_per_second)
+	if gameWon:
+		return
+	print(timer)
+	timer += delta
+	
+	if debugMode:
+		print("Timer:", timer)
+	
+	if timer >= winTime:
+		CheckWin()
+
+func CheckWin() -> void:
+	if gameWon:
+		return
+	gameWon = true
+	print("Timer selesai, cek win condition via TaskManager")
+	TaskManager.timer_win_reached()
