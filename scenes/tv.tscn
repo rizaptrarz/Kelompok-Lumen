@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://ivd8obd1ll3l"]
+
+[ext_resource type="Script" path="res://scripts/tv.gd" id="1_31xhf"]
+[ext_resource type="Texture2D" uid="uid://dg8wd1h1ld022" path="res://assets/Interiors_free_48x48.png" id="1_o4p67"]
+[ext_resource type="PackedScene" uid="uid://dvq28m8eifrfq" path="res://scenes/interactable.tscn" id="2_ltxog"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoful"]
+atlas = ExtResource("1_o4p67")
+region = Rect2(10, 700, 75, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_286g3"]
+size = Vector2(74, 51)
+
+[node name="tv" type="Node2D"]
+script = ExtResource("1_31xhf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_uoful")
+
+[node name="interactable" parent="." instance=ExtResource("2_ltxog")]
+interact_name = "[E] Untuk Text Box"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_286g3")

@@ -1,10 +1,9 @@
-extends MarginContainer
+extends CanvasLayer
 
-@onready var label = $MarginContainer/Label
-@onready var timer = $LetterDisplayTimer
-
-const MAX_WIDHT = 256
-
+@onready var label_nama = $MarginContainer/MarginContainer/HBoxContainer/LabelNama
+@onready var label_text = $MarginContainer/MarginContainer/HBoxContainer/LabelText
+@onready var timer = $MarginContainer/LetterDisplayTimer
+var nama = ""
 var text = ""
 var letter_index = 0
 
@@ -14,27 +13,18 @@ var punctuation_time = 0.2
 
 signal finished_displaying()
 
-func display_text(text_to_display: String):
+func display_text(nama_char: String, text_to_display: String):
+	nama = nama_char
 	text = text_to_display
-	label.text = text_to_display
+	label_nama.text = nama_char
+	label_text.text = text_to_display
+	label_text.text = ""
 	
-	await resized
-	custom_minimum_size.x = min(size.x, MAX_WIDHT)
-	
-	if size.x > MAX_WIDHT:
-		label.autowrap_mode = TextServer.AUTOWRAP_WORD
-		await resized # resize x 
-		await resized # resize y
-		custom_minimum_size.y = size.y
-		
-	global_position.x -= size.x / 2
-	global_position.y -= size.y + 24
-	
-	label.text = ""
+	letter_index = 0
 	_display_letter()
 	
 func _display_letter():
-	label.text += text[letter_index]
+	label_text.text += text[letter_index]
 	
 	letter_index += 1
 	if letter_index >= text.length():
@@ -49,7 +39,6 @@ func _display_letter():
 		_:
 			timer.start(letter_time)
 	
-
 
 func _on_letter_display_timer_timeout() -> void:
 	_display_letter()
