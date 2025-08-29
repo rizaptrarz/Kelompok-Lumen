@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqjmbqs4uogat"]
+[gd_scene load_steps=13 format=3 uid="uid://bqjmbqs4uogat"]
 
 [ext_resource type="PackedScene" uid="uid://caelnc0mta6gy" path="res://scenes/player.tscn" id="1_dffci"]
 [ext_resource type="Script" path="res://scripts/time/time_system.gd" id="2_t6f58"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bc44uywknp5s3" path="res://scenes/mejikom.tscn" id="6_5lljq"]
 [ext_resource type="PackedScene" uid="uid://cv7dmm7vq74lf" path="res://scenes/energy_drink.tscn" id="7_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://ds5ho3l5g0yc" path="res://scenes/kasur.tscn" id="7_fhpr0"]
-[ext_resource type="PackedScene" path="res://scenes/poop.tscn" id="8_tph8m"]
-[ext_resource type="Script" uid="uid://bvhnbp02ttoa0" path="res://scripts/energy_drink.gd" id="9_ir8iy"]
+[ext_resource type="PackedScene" uid="uid://b4q6tx67wklsd" path="res://scenes/poop.tscn" id="8_tph8m"]
+[ext_resource type="Script" path="res://scripts/energy_drink.gd" id="9_ir8iy"]
+[ext_resource type="PackedScene" uid="uid://6vjg1ko5hmcp" path="res://scenes/komputer.tscn" id="11_ytue8"]
 
 [sub_resource type="Resource" id="Resource_lb2an"]
 script = ExtResource("3_nqidl")
@@ -62,3 +63,6 @@ position = Vector2(723, 106)
 
 [node name="poop3" parent="task/poops" instance=ExtResource("8_tph8m")]
 position = Vector2(769, 88)
+
+[node name="komputer" parent="." instance=ExtResource("11_ytue8")]
+position = Vector2(1021, 123)
