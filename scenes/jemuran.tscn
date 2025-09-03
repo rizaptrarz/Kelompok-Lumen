@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxrlqaohh15s7"]
 
-[ext_resource type="Script" path="res://scripts/jemuran.gd" id="1_4inxx"]
+[ext_resource type="Script" uid="uid://gchoqwt57b1v" path="res://scripts/jemuran.gd" id="1_4inxx"]
 [ext_resource type="Texture2D" uid="uid://cl50rrx3bviui" path="res://assets/Jemuran/jemuran_jkosong.png" id="2_7nu74"]
 [ext_resource type="Script" path="res://scripts/interactable.gd" id="2_tnlgn"]
 [ext_resource type="Texture2D" uid="uid://dxftwpliiglnk" path="res://assets/Jemuran/jemuran_j3baju.png" id="3_lqg67"]

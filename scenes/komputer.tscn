@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://6vjg1ko5hmcp"]
 
 [ext_resource type="Texture2D" uid="uid://dg8wd1h1ld022" path="res://assets/Interiors_free_48x48.png" id="1_5hiq1"]
-[ext_resource type="Script" path="res://scripts/komputer.gd" id="1_p6syy"]
+[ext_resource type="Script" uid="uid://biaq6i18aor6l" path="res://scripts/komputer.gd" id="1_p6syy"]
 [ext_resource type="PackedScene" uid="uid://dvq28m8eifrfq" path="res://scenes/interactable.tscn" id="2_vrer2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwwke"]

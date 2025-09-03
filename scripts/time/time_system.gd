@@ -8,7 +8,6 @@ var gameWon: bool = false
 func _process(delta: float) -> void:
 	if gameWon:
 		return
-	print(timer)
 	timer += delta
 	
 	if debugMode:
