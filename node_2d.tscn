@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bqjmbqs4uogat"]
+[gd_scene load_steps=24 format=4 uid="uid://bqjmbqs4uogat"]
 
 [ext_resource type="PackedScene" uid="uid://caelnc0mta6gy" path="res://scenes/player.tscn" id="1_dffci"]
 [ext_resource type="Script" path="res://node_2d.gd" id="1_x0ka3"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://scripts/energy_drink.gd" id="9_ir8iy"]
 [ext_resource type="PackedScene" uid="uid://6vjg1ko5hmcp" path="res://scenes/komputer.tscn" id="11_ytue8"]
 [ext_resource type="PackedScene" uid="uid://ivd8obd1ll3l" path="res://scenes/tv.tscn" id="12_s8jk4"]
+[ext_resource type="PackedScene" uid="uid://b1lek2tij651q" path="res://scenes/pause_menu.tscn" id="15_ifeiw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kjssy"]
 texture = ExtResource("2_c387y")
@@ -1287,3 +1288,7 @@ position = Vector2(254, 344)
 offset_right = 62.0
 offset_bottom = 23.0
 text = "100/100"
+
+[node name="CanvasPauseMenu" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasPauseMenu" instance=ExtResource("15_ifeiw")]
