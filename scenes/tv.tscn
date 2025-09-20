@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ivd8obd1ll3l"]
 
-[ext_resource type="Script" path="res://scripts/tv.gd" id="1_31xhf"]
+[ext_resource type="Script" uid="uid://d4b6oe5dwfg56" path="res://scripts/tv.gd" id="1_31xhf"]
 [ext_resource type="Texture2D" uid="uid://dg8wd1h1ld022" path="res://assets/Interiors_free_48x48.png" id="1_o4p67"]
 [ext_resource type="PackedScene" uid="uid://dvq28m8eifrfq" path="res://scenes/interactable.tscn" id="2_ltxog"]
 

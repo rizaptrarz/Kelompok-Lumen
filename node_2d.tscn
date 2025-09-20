@@ -1,19 +1,22 @@
-[gd_scene load_steps=23 format=4 uid="uid://bqjmbqs4uogat"]
+[gd_scene load_steps=26 format=4 uid="uid://bqjmbqs4uogat"]
 
 [ext_resource type="PackedScene" uid="uid://caelnc0mta6gy" path="res://scenes/player.tscn" id="1_dffci"]
-[ext_resource type="Script" path="res://node_2d.gd" id="1_x0ka3"]
+[ext_resource type="Script" uid="uid://dqmh4ymbirjqy" path="res://node_2d.gd" id="1_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://hwuhrhigkh6b" path="res://assets/Room_Builder_free_16x16.png" id="2_c387y"]
-[ext_resource type="Script" path="res://scripts/time/time_system.gd" id="2_t6f58"]
+[ext_resource type="Script" uid="uid://b8nwlu4r0ktu8" path="res://scripts/time/time_system.gd" id="2_t6f58"]
 [ext_resource type="AudioStream" uid="uid://ccieg41t0lsuw" path="res://scripts/Harvest-Moon_-Back-to-Nature-_-Title-_-OST.ogg" id="4_0h7mo"]
 [ext_resource type="PackedScene" uid="uid://bxrlqaohh15s7" path="res://scenes/jemuran.tscn" id="4_co1dh"]
 [ext_resource type="PackedScene" uid="uid://bsx8vm8mci3q8" path="res://scenes/homework.tscn" id="5_edv34"]
 [ext_resource type="PackedScene" uid="uid://bc44uywknp5s3" path="res://scenes/mejikom.tscn" id="6_5lljq"]
 [ext_resource type="PackedScene" uid="uid://cv7dmm7vq74lf" path="res://scenes/energy_drink.tscn" id="7_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://ds5ho3l5g0yc" path="res://scenes/kasur.tscn" id="7_fhpr0"]
-[ext_resource type="PackedScene" uid="uid://b4q6tx67wklsd" path="res://scenes/poop.tscn" id="8_tph8m"]
-[ext_resource type="Script" path="res://scripts/energy_drink.gd" id="9_ir8iy"]
+[ext_resource type="PackedScene" uid="uid://dole7gtnpkr1y" path="res://scenes/poop.tscn" id="8_tph8m"]
+[ext_resource type="Script" uid="uid://bvhnbp02ttoa0" path="res://scripts/energy_drink.gd" id="9_ir8iy"]
 [ext_resource type="PackedScene" uid="uid://6vjg1ko5hmcp" path="res://scenes/komputer.tscn" id="11_ytue8"]
 [ext_resource type="PackedScene" uid="uid://ivd8obd1ll3l" path="res://scenes/tv.tscn" id="12_s8jk4"]
+[ext_resource type="Script" uid="uid://ei3yhnvk7aw6" path="res://buff_manager.gd" id="15_d2bti"]
+[ext_resource type="Texture2D" uid="uid://dktc78dh8bn7i" path="res://assets/buff debuff/buff_energi.png" id="16_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://dxcwlj18mptjt" path="res://assets/buff debuff/buff_senang.png" id="17_flf07"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kjssy"]
 texture = ExtResource("2_c387y")
@@ -1259,10 +1262,11 @@ position = Vector2(487, 94)
 player_path = NodePath("../../Player")
 
 [node name="EnergyDrink" parent="task" instance=ExtResource("7_4d7sh")]
-position = Vector2(136, 272)
+position = Vector2(572, 1205)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("9_ir8iy")
 player_path = NodePath("../../Player")
+buff_manager_path = NodePath("../../Buff Manager")
 
 [node name="poops" type="Node" parent="task"]
 
@@ -1287,3 +1291,18 @@ position = Vector2(254, 344)
 offset_right = 62.0
 offset_bottom = 23.0
 text = "100/100"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 156.0
+offset_right = 65.0
+offset_bottom = 349.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="Buff Manager" type="Node" parent="."]
+script = ExtResource("15_d2bti")
+player = NodePath("../Player")
+buff_ui_container = NodePath("../CanvasLayer/GridContainer")
+energik_icon = ExtResource("16_ta5nu")
+senang_icon = ExtResource("17_flf07")

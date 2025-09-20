@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dct0grq6fn86b"]
 
-[ext_resource type="Script" path="res://scripts/text_baloon.gd" id="1_lfn5q"]
+[ext_resource type="Script" uid="uid://qdbh2jccc8iw" path="res://scripts/text_baloon.gd" id="1_lfn5q"]
 [ext_resource type="Texture2D" uid="uid://bssqifbecdaej" path="res://assets/text_bubble.png" id="2_ntnnx"]
 
 [node name="TextBaloon" type="MarginContainer"]

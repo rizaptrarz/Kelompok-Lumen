@@ -1,6 +1,6 @@
 [gd_scene load_steps=55 format=3 uid="uid://caelnc0mta6gy"]
 
-[ext_resource type="Script" path="res://scenes/playermovement.gd" id="1_7x6u8"]
+[ext_resource type="Script" uid="uid://dt5ap1mymyplm" path="res://scenes/playermovement.gd" id="1_7x6u8"]
 [ext_resource type="Texture2D" uid="uid://bbhw4pbehfcv5" path="res://assets/Amelia_idle_anim_16x16.png" id="2_cka22"]
 [ext_resource type="Texture2D" uid="uid://ci7angk1yxyxj" path="res://assets/Amelia_run_16x16.png" id="3_iv8kd"]
 [ext_resource type="PackedScene" uid="uid://c7nhlbudn3561" path="res://scenes/interacting_component.tscn" id="3_o847t"]

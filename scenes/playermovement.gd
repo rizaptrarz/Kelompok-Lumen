@@ -74,21 +74,6 @@ func _on_stop_player() -> void:
 	can_move = false
 	velocity = Vector2.ZERO
 
-func apply_stamina_boost() -> void:
-	var old_stamina_max = stamina_max
-	
-	var stamina_percentage: float = 0
-	if old_stamina_max > 0:
-		stamina_percentage = current_stamina / old_stamina_max
-	
-	var new_stamina_max = default_stamina_max * 1.5
-	stamina_max = min(new_stamina_max, STAMINA_CAP)
-	
-	current_stamina = stamina_percentage * stamina_max
-	_update_stamina_ui()
-	
-	print("Stamina Maksimum baru: ", stamina_max)
-
 # Fungsi update UI stamina
 func _update_stamina_ui() -> void:
 	if stamina_label:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4q6tx67wklsd"]
+[gd_scene load_steps=6 format=3 uid="uid://dole7gtnpkr1y"]
 
 [ext_resource type="Texture2D" uid="uid://c5h7khc2xgh3d" path="res://assets/Task Mechanic/poops-sheet.png" id="1_0vkkv"]
 [ext_resource type="Script" path="res://scripts/poop.gd" id="1_doao0"]
