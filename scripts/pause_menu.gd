@@ -2,14 +2,17 @@ extends Control
 @onready var MainMenu = preload("res://scenes/main_menu.tscn")
 
 func _ready():
+	visible = false
 	$AnimationPlayer.play("RESET")
 
 func resume():
 	get_tree().paused = false
+	visible = false
 	$AnimationPlayer.play_backwards("blur")
 
 func pause():
 	get_tree().paused = true
+	visible = true
 	$AnimationPlayer.play("blur")
 
 func testEsc():

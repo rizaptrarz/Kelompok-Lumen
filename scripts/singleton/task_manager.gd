@@ -62,7 +62,7 @@ func check_win_condition() -> void:
 
 func menang() -> void:
 	print("Timer selesai, semua jemuran hidup, semua task selesai! WIN!")
-	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/win_screen_ui.tscn")
 
 func kalah() -> void:
 	print("GAME OVER!")

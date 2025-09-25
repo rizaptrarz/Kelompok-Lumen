@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=3 uid="uid://dxbna3bcrayfi"]
 
-[ext_resource type="Script" uid="uid://badcuvsjhicgb" path="res://scenes/main_menu.gd" id="1_1sh4u"]
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_1sh4u"]
 [ext_resource type="AudioStream" uid="uid://bukmrrpx3uefg" path="res://assets/background-music-224633.mp3" id="2_stu8o"]
-[ext_resource type="Script" uid="uid://b4r2ofl7yc3x5" path="res://scripts/audio_control.gd" id="3_186uq"]
-[ext_resource type="Script" uid="uid://dnetkkdp7jrvg" path="res://scripts/full_screen_control.gd" id="4_nsahl"]
-[ext_resource type="Script" uid="uid://dcypini00qxlu" path="res://scenes/level_1.gd" id="5_8ln24"]
+[ext_resource type="Script" path="res://scripts/audio_control.gd" id="3_186uq"]
+[ext_resource type="Script" path="res://scripts/full_screen_control.gd" id="4_nsahl"]
+[ext_resource type="Script" path="res://scenes/level_1.gd" id="5_8ln24"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rin1h"]
 
@@ -90,8 +90,8 @@ texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rin1h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8umv")
@@ -105,8 +105,8 @@ texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rin1h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8umv")
@@ -119,8 +119,8 @@ texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rin1h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8umv")
@@ -191,8 +191,8 @@ offset_bottom = 98.0
 grow_vertical = 0
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rin1h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8umv")
@@ -241,9 +241,9 @@ texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e5wqu")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vi2on")
@@ -312,8 +312,8 @@ offset_bottom = -9.0
 grow_vertical = 0
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rin1h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8umv")

@@ -78,3 +78,4 @@ func _on_stop_player() -> void:
 func _update_stamina_ui() -> void:
 	if stamina_label:
 		stamina_label.text = str(round(current_stamina)) + "/" + str(int(stamina_max))
+		
