@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dvq28m8eifrfq" path="res://scenes/interactable.tscn" id="2_jeanp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7y1g"]
-size = Vector2(44, 45)
+size = Vector2(195, 165)
 
 [node name="mejikom" type="Node2D"]
 script = ExtResource("1_7h3h3")
@@ -20,5 +20,5 @@ flip_h = true
 interact_name = "[E] Masak Nasi"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
-position = Vector2(0, 9)
+position = Vector2(2.5, 8.5)
 shape = SubResource("RectangleShape2D_y7y1g")

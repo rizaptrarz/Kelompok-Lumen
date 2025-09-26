@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://h44uts1y5o1d"]
+
+[ext_resource type="Texture2D" uid="uid://c7varnhvffkod" path="res://assets/Size_02_V2.png" id="1_tjbe7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3e8r"]
+atlas = ExtResource("1_tjbe7")
+region = Rect2(32, 0, 32, 66)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1l6ki"]
+radius = 14.0
+
+[node name="pohonV2" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_x3e8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 51)
+shape = SubResource("CircleShape2D_1l6ki")
