@@ -8,12 +8,19 @@ var player_ref: CharacterBody2D = null
 @export var buff_ui_container: NodePath      # GridContainer untuk sprite buff
 @export var energik_icon: Texture2D          # icon sprite untuk buff Energik
 @export var senang_icon: Texture2D           # icon sprite untuk buff Senang
+@export var segar_icon: Texture2D            # icon sprite untuk buff Segar
+@export var kesundul_icon: Texture2D         # icon sprite untuk debuff Kesundul
+@export var sedih_icon: Texture2D            # icon sprite untuk debuff Sedih
+@export var stress_icon: Texture2D           # icon sprite untuk debuff Stress
 
 # List buff aktif
 var active_buffs: Array[String] = []
 var buff_icons: Dictionary = {} # simpan buff_name -> TextureRect
 
-# Daftar efek buff
+# === VARIABEL BONUS ===
+var interaction_bonus: float = 1.0
+
+# Daftar efek buff/debuff
 var buff_effects := {
 	"Energik": func():
 		if player_ref:
@@ -27,8 +34,33 @@ var buff_effects := {
 
 	"Senang": func():
 		if player_ref:
-			player_ref.stamina_regen_rate *= 1.5
-			print("Buff [Senang] aktif → stamina regen x1.5: ", player_ref.stamina_regen_rate),
+			interaction_bonus *= 1.3
+			print("Buff [Senang] aktif → interaction speed +30%"),
+
+	"Segar": func():
+		if player_ref:
+			player_ref.move_speed *= 1.2
+			print("Buff [Segar] aktif → movement speed +20%"),
+
+	"Kesundul": func():
+		if player_ref:
+			if "Segar" in active_buffs:
+				remove_buff("Segar")
+			player_ref.move_speed *= 0.55
+			print("Debuff [Kesundul] aktif → movement speed -45%"),
+
+	"Sedih": func():
+		if player_ref:
+			if "Senang" in active_buffs:
+				remove_buff("Senang")
+				interaction_bonus = 1.0  # reset dulu
+			interaction_bonus *= 0.85
+			print("Debuff [Sedih] aktif → interaction speed -15%"),
+
+	"Stress": func():
+		if player_ref:
+			interaction_bonus *= 0.5
+			print("Debuff [Stress] aktif → interaction speed -50%"),
 }
 
 func _ready() -> void:
@@ -39,13 +71,12 @@ func _ready() -> void:
 	if buff_ui_container != null:
 		var container = get_node(buff_ui_container)
 		if container is GridContainer:
-			container.columns = 1  # WAJIB > 0
+			container.columns = 1
 			container.add_theme_constant_override("h_separation", 0)
 			container.add_theme_constant_override("v_separation", 0)
 
 	# contoh auto-buff
-	add_buff("Senang")
-
+	# add_buff("Senang")
 
 # Tambah buff ke player
 func add_buff(buff_name: String) -> void:
@@ -74,10 +105,16 @@ func remove_buff(buff_name: String) -> void:
 		print("Buff dihapus: ", buff_name)
 		_remove_buff_icon(buff_name)
 
-		# Reset efek buff
-		if buff_name == "Senang" and player_ref:
-			player_ref.stamina_regen_rate /= 1.5
-			print("Buff [Senang] hilang → stamina regen normal lagi: ", player_ref.stamina_regen_rate)
+		# Reset efek khusus
+		if buff_name == "Senang":
+			interaction_bonus = 1.0
+			print("Buff [Senang] hilang → interaction speed reset normal.")
+		elif buff_name == "Segar":
+			if player_ref: player_ref.move_speed /= 1.2
+		elif buff_name == "Kesundul":
+			if player_ref: player_ref.move_speed /= 0.55
+		elif buff_name == "Sedih" or buff_name == "Stress":
+			interaction_bonus = 1.0
 	else:
 		print("Buff tidak ditemukan: ", buff_name)
 
@@ -94,22 +131,28 @@ func _show_buff_icon(buff_name: String) -> void:
 	var icon := TextureRect.new()
 	icon.expand = true
 	icon.stretch_mode = TextureRect.STRETCH_SCALE
-	icon.custom_minimum_size = Vector2(164, 54)   # ukuran fix
+	icon.custom_minimum_size = Vector2(164, 54)
 	icon.size_flags_horizontal = Control.SIZE_FILL
 	icon.size_flags_vertical = Control.SIZE_FILL
 
-	if buff_name == "Energik" and energik_icon:
-		icon.texture = energik_icon
-	elif buff_name == "Senang" and senang_icon:
-		icon.texture = senang_icon
-	else:
-		return
+	match buff_name:
+		"Energik":
+			icon.texture = energik_icon
+		"Senang":
+			icon.texture = senang_icon
+		"Segar":
+			icon.texture = segar_icon
+		"Kesundul":
+			icon.texture = kesundul_icon
+		"Sedih":
+			icon.texture = sedih_icon
+		"Stress":
+			icon.texture = stress_icon
+		_:
+			return
 
 	container.add_child(icon)
 	buff_icons[buff_name] = icon
-
-
-
 
 func _remove_buff_icon(buff_name: String) -> void:
 	if buff_name in buff_icons:
